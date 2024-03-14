@@ -1,0 +1,157 @@
+/* FONT IMPORT */
+@font-face {
+  /* ITC Avant Garde Gothic Pro */
+  font-family: "myFont"; 
+  src: local('myFont') url("./assets/fonts/ITC-Avant-Garde-Gothic-Pro.ttf");
+}
+@font-face {
+  font-family: 'Avant Garde Gothic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avant Garde Gothic'), url('./assets/fonts/ITCAvantGardeStd-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Avenir Roman';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir Roman'), url('./assets/fonts/avenir_roman_12.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  display: flex;
+}
+
+.page-container .left-side #banner {
+  width: 720px;
+  height: 864px;
+  position: relative;
+  z-index: 10;
+}
+
+.page-container .right-side {
+  /* padding: 96px 106px 95px 120px; */
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+}
+.page-container .right-side .text-container {
+  padding: 96px 106px 0 120px;
+}
+.page-container .right-side .text-container h1 {
+  width: 494px;
+  height: 123px;
+  font-family: 'Avant Garde Gothic', 'Courier New', Courier, monospace;
+  font-size: 31.25px;
+  line-height: 40.62px;
+  margin-bottom: 12px;
+}
+.page-container .right-side .text-container p {
+  width: 432px;
+  height: 52px;
+  font-family: 'Avenir Roman';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25.6px;
+  color: #666666;
+  margin-bottom: 32px;
+}
+.page-container .right-side .text-container button {
+  width: 146px;
+  height: 23px;
+  background: transparent;
+  border: none;
+  text-transform: capitalize;
+  font-family: 'Avenir Roman';
+  font-weight: 900;
+  font-size: 12.8px;
+  line-height: 17.48px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+}
+
+.page-container .right-side .product-slider {
+  position: relative;
+  display: flex;
+  gap: 32px;
+  width: 690px;
+  padding: 0 0 95px 120px;
+  overflow: hidden;
+  /* box-sizing: border-box; */
+}
+.page-container .right-side .product-slider .right-btn {
+  position: absolute;
+  top: 135px;
+  right: 48px;
+  padding: 12px;
+  border: 1px solid gray;
+  background: transparent;
+  line-height: 0;
+  /* bottom: 188px; */
+}
+.page-container .right-side .product-slider .card {
+  cursor: grab;
+  user-select: none;
+}
+.page-container .right-side .product-slider .card:active {
+  cursor: grabbing;
+}
+.page-container .right-side .product-slider .card .prd-img {
+  width: 230px;
+  height: 310px;
+  margin-bottom: 12px;
+  -webkit-user-drag: none;
+}
+.page-container .right-side .product-slider .card .prd-info {
+  font-family: 'Avenir Roman';
+}
+.page-container .right-side .product-slider .card .prd-info .prd-name {
+  font-size: 12.8px;
+  line-height: 20.48px;
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+.page-container .right-side .product-slider .card .prd-info .prd-details {
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-container .right-side .product-slider .card .prd-info .prd-details .prd-price {
+  font-size: 12.8px;
+  line-height: 20.48px;
+  font-weight: 500;
+}
+.page-container .right-side .product-slider .card .prd-info .prd-details .prd-colors {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.page-container .right-side .product-slider .card .prd-info .prd-details .prd-colors .color-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.page-container .right-side .product-slider .card .prd-info .prd-details .prd-colors .color-btn:active {
+  border: 2px solid white;
+  outline: 1px solid black;
+}
+.page-container .right-side .product-slider .card .prd-info .prd-details .prd-colors .color-btn#blue {
+  background: #99C3CC;
+}
+.page-container .right-side .product-slider .card .prd-info .prd-details .prd-colors .color-btn#red {
+  background: #CC9999;
+}
+.page-container .right-side .product-slider .card .prd-info .prd-details .prd-colors .color-btn#purple {
+  background: #CB99CC;
+}
+.page-container .right-side .product-slider .card .prd-info .prd-details .prd-colors .color-btn#green {
+  background: #A6CC99;
+}
