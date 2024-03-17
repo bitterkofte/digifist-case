@@ -24,28 +24,20 @@
 
 .page-container {
   display: flex;
-  /* position: relative; */
 }
 .page-container .left-side{
-  /* height: 100%; */
   position: relative;
 }
-/* .page-container .left-side #banner { */
-  /* max-width: 720px; */
-  /* width: 720px; */
-  /* max-width: 100%; */
-  /* height: 864px; */
-  /* object-fit: cover; */
-/* } */
+.page-container .left-side #banner {
+  max-width: 720px;
+  height: 864px;
+  object-fit: cover;
+}
 .page-container .gradient {
   display: block;
 }
 
 .page-container .right-side {
-  /* padding: 96px 106px 95px 120px; */
-  /* display: flex;
-  flex-direction: column;
-  gap: 68px; */
   overflow: hidden;
 }
 .page-container .right-side .text-container {
@@ -54,25 +46,20 @@
 }
 .page-container .right-side .text-container h1 {
   max-width: 494px;
-  /* min-height: 123px; */
   font-family: 'Avant Garde Gothic', 'Courier New', Courier, monospace;
   font-size: 31.25px;
-  /* line-height: 40.62px; */
   margin-bottom: 12px;
 }
 .page-container .right-side .text-container p {
   max-width: 432px;
-  /* min-height: 52px; */
   font-family: 'Avenir Roman';
   font-weight: 400;
   font-size: 16px;
-  /* line-height: 25.6px; */
   color: #666666;
   margin-bottom: 32px;
 }
 .page-container .right-side .text-container button {
   width: 146px;
-  /* height: 23px; */
   background: transparent;
   border: none;
   text-transform: capitalize;
@@ -86,13 +73,7 @@
 
 .page-container .right-side .product-slider {
   position: relative;
-  /* display: flex;
-  gap: 32px; */
-  /* width: 720px; */
-  /* width: 700px; */
-  /* padding: 0 0 95px 0; */
   overflow: hidden;
-  /* background: skyblue; */
 }
 .page-container .right-side .product-slider .slider-track {
   display: flex;
@@ -111,7 +92,6 @@
   line-height: 0;
   z-index: 20;
   cursor: pointer;
-  /* bottom: 188px; */
 }
 .page-container .right-side .product-slider .card {
   cursor: grab;
@@ -179,30 +159,13 @@
   background: #A6CC99;
 }
 
-.page-container .left-side #banner {
-  max-width: 720px;
-  /* width: 720px; */
-  /* max-width: 100%; */
-  height: 864px;
-  object-fit: cover;
-}
-
+/* Tablet view */
 @media (max-width: 1300px) {
-  .page-container {
-    /* height: 900px; */
-  }
-  .page-container .left-side {
-    /* height: 100%; */
-  }
   .page-container .left-side #banner {
     width: 720px;
     max-width: 100%;
-    /* height: 100%; */
     object-fit: cover; 
   }
-  /* .page-container .right-side {
-    flex-grow: 1;
-  } */
   .page-container .right-side .text-container {
     padding: 45px 50px 0 60px;
   }
@@ -211,48 +174,21 @@
   }
 }
 
+/* Mobile view */
 @media (max-width: 420px) {
-  /* body {
-    width: fit-content;
-  } */
   .page-container {
     display: block;
-    /* max-width: 360px; */
-    /* flex-direction: column; */
-    /* overflow: hidden; */
   }
   .page-container .left-side {
     max-width: 100%;
-    /* width: ; */
-    /* height: 437px; */
     height: auto;
   }  
-  /* .page-container .left-side .gradient {
-    width: 360px;
-    height: auto;
-  }   */
   .page-container .left-side #banner {
-    /* max-width: auto;
-    width: auto;
-    height: 100%;
-    object-fit: cover; */
-
     max-width: 100%;
     width: auto;
     min-height: 437px;
     height: 100%;
-    /* width: 100%;
-    height: 500px; */
   }
-  /* .page-container .right-side {
-    width: 100%;
-  } */
-  /* .page-container .right-side .product-slider {
-    width: 100px;
-  }
-  .page-container .right-side .product-slider .slider-track {
-    width: 100px;
-  } */
   .page-container .gradient {
     position: absolute;
     bottom: 0;
@@ -265,9 +201,6 @@
     position: absolute;
     top: 219px;
     width: 100%;
-    /* top: 519px; */
-    /* width: 100%; */
-    /* overflow: hidden; */
   }
   .page-container .right-side .text-container {
     padding: 29px 24px 0 24px;
@@ -276,8 +209,6 @@
   }
   .page-container .right-side .text-container h1 {
     max-width: 312px;
-    /* height: 78px; */
-    /* line-height: 26px; */
     font-size: 20px;
   }
   .page-container .right-side .text-container p {
@@ -305,8 +236,5 @@
     flex-direction: column;
     gap: 8px;
     align-items: flex-start;
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
   }
 }
