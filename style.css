@@ -1,10 +1,5 @@
 /* FONT IMPORT */
 @font-face {
-  /* ITC Avant Garde Gothic Pro */
-  font-family: "myFont"; 
-  src: local('myFont') url("./assets/fonts/ITC-Avant-Garde-Gothic-Pro.ttf");
-}
-@font-face {
   font-family: 'Avant Garde Gothic';
   font-style: normal;
   font-weight: normal;
