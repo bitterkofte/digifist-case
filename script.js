@@ -1,4 +1,4 @@
-const sliderContainer = document.querySelector('.product-slider');
+const productSlider = document.querySelector('.product-slider');
 const sliderTrack = document.querySelector('.slider-track');
 const scrollRight = document.getElementById("scroll-right");
 
@@ -36,34 +36,50 @@ let scrollX = 0;
 
 function dragHandler (event) {
   if (!isDragging) return;
+  let clientX;
 
-  const deltaX = event.clientX - startX;
-  startX = event.clientX;
+  if (event.type === 'touchmove') clientX = event.touches[0].clientX; //touch evert
+  else clientX = event.clientX; //mouse event
+
+  const deltaX = clientX - startX;
+  startX = clientX;
   scrollX -= deltaX;
 
-  // Preventing excessive scrolling 
+  //preventing excessive scrolling 
   scrollX = Math.max(0, scrollX);
-  const maxScroll = sliderTrack.offsetWidth - sliderContainer.offsetWidth;
+  const maxScroll = sliderTrack.offsetWidth - productSlider.offsetWidth;
   scrollX = Math.min(maxScroll, scrollX);
 
-  sliderTrack.style.transform = `translateX(-${scrollX}px)`;
+  sliderTrack.style.transform = `translateX(-${scrollX}px)`;  //adjusting scrolling
 }
 
 function dropHandler (event) {
+  if (event.type === 'touchstart') {
+    event.preventDefault();
+    startX = event.touches[0].clientX;
+  } else {
+    startX = event.clientX;
+  }
   isDragging = true;
-  startX = event.clientX;
 }
 
 function scrollRightHandler() {
-  const currentPosition = parseFloat(sliderTrack.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
   const newPosition = -scrollX - 100;
-  if (-newPosition-20 > sliderTrack.scrollWidth - sliderContainer.offsetWidth) return
+
+  //preventing excessive scrolling 
+  if (-newPosition-20 > sliderTrack.scrollWidth - productSlider.offsetWidth) return
   scrollX = -newPosition;
-  sliderTrack.style.transform = `translateX(${newPosition}px)`;
+  sliderTrack.style.transform = `translateX(${newPosition}px)`; //adjusting scrolling
 }
 
 // EVENT LISTENERS
-sliderContainer.addEventListener('mousedown', (event) => dropHandler(event));
+productSlider.addEventListener('mousedown', (event) => dropHandler(event));
+productSlider.addEventListener('touchstart', dropHandler);
+
 document.addEventListener('mouseup', () => isDragging = false);
-document.addEventListener('mousemove', (event) => dragHandler(event));
+document.addEventListener('touchend', () => isDragging = false);
+
+document.addEventListener('mousemove', dragHandler);
+document.addEventListener('touchmove', dragHandler);
+
 scrollRight.addEventListener("click", scrollRightHandler);
